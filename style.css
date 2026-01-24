@@ -1,0 +1,613 @@
+:root {
+  --primary: #3d73a9;
+  --dark: #4E0A31;
+  --deep: #702f93;
+ 
+  
+
+  --bg: #06071b;
+  --text: #ffffff;
+  --glass: rgba(255,255,255,0.08);
+}
+
+body.light {
+  --bg: #f5f7ff;
+  --text: #111;
+  --glass: rgba(255,255,255,0.6);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* Layout */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass */
+.glass {
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+
+  background: transparent;
+  transition: 0.3s;
+}
+
+/* scrolled state */
+.nav.scrolled {
+  backdrop-filter: blur(18px);
+  background: rgba(0, 3, 61, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Buttons */
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.icon-btn.big {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* layout */
+.hero-container {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 4rem;
+
+
+width: 100%;
+max-width: 1100px;
+margin: auto;
+}
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+
+/* smoother animation rendering */
+[data-aos] {
+  will-change: transform, opacity;
+}
+
+/* left image */
+.hero-image {
+flex: 0 0 auto;
+}
+
+
+/* right text */
+.hero-content {
+max-width: 520px;
+}
+
+/* remove glass look */
+.hero-card {
+background: none;
+backdrop-filter: none;
+border: none;
+}
+
+/* Cards */
+.card {
+  padding: 2rem;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;   /* horizontal center */
+  align-content: center;     /* vertical center */
+
+  gap: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+
+  white-space: nowrap; /* prevents breaking text */
+  transition: 0.25s;
+}
+
+.chip:hover {
+  background: linear-gradient(90deg, var(--primary), var(--deep));
+  color: white;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  perspective: 1000px;
+  transition: transform 0.35s cubic-bezier(.4,.2,.2,1);
+}
+
+.project-inner {
+  position: relative;
+  height: 180px;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(.4,.2,.2,1);
+  will-change: transform;
+}
+
+.project-card:hover .project-inner {
+  transform: rotateY(180deg);
+}
+
+/* lift whole card */
+.project-card:hover {
+transform: translateY(-6px);
+}
+
+.project-front,
+.project-back {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 1.5rem;
+  text-align: center;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  border-radius: 18px;
+}
+.project-back {
+  transform: rotateY(180deg);
+}
+
+/* gradient border on hover */
+.project-card:hover .project-front,
+.project-card:hover .project-back {
+border: 1px solid transparent;
+
+
+background:
+linear-gradient(var(--glass), var(--glass)) padding-box,
+linear-gradient(90deg, var(--primary), var(--deep)) border-box;
+}
+
+.project-back {
+padding: 1.4rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 0.6rem;
+text-align: center;
+}
+
+
+.project-back h4 {
+font-size: 1rem;
+font-weight: 600;
+}
+
+
+.project-desc {
+font-size: 0.85rem;
+opacity: 0.85;
+line-height: 1.4;
+}
+
+
+/* CONTACT */
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(90deg, var(--primary), var(--deep));
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* HERO profile */
+.profile-img {
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  display: block;
+
+  will-change: auto;
+}
+
+/* =========================
+   Gradient ring
+========================= */
+
+.profile-ring {
+  padding: 4px; /* ring thickness */
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--deep),
+    var(--primary)
+  );
+
+  display: inline-block;
+}
+
+/* hero icons layout */
+.hero-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* nicer hover */
+.icon-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-top: 0.6rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   Active nav highlight
+========================= */
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--deep));
+  transition: width 0.3s ease;
+}
+
+/* active state */
+.nav-link.active {
+  background: linear-gradient(90deg, var(--primary), var(--deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* =========================
+   SKILL FLIP CARDS
+========================= */
+
+.skill-flip {
+  perspective: 1200px;
+  cursor: pointer;
+  height: 240px; /* keeps grid stable */
+  will-change: transform; /* smoother hover */
+}
+
+.skill-inner {
+  position: relative;
+  height: 240px;          /* fixed height = no layout break */
+  width: 100%;
+  backface-visibility: hidden;
+
+  transform-style: preserve-3d;
+
+  transition: transform 0.55s cubic-bezier(.4,.2,.2,1);
+
+  will-change: transform; /* GPU acceleration */
+}
+/* flip */
+.skill-flip.flipped .skill-inner {
+  transform: rotateY(180deg);
+}
+
+.skill-back .chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+}
+
+/* faces */
+.skill-front,
+.skill-back {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 2rem;
+  text-align: center;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transform: translateZ(0); /* GPU boost */
+}
+
+.skill-back {
+  transform: rotateY(180deg);
+}
+
+.skill-flip:hover {
+  transform: translateY(-4px);
+}
+
+/* hover gradient glow */
+.skill-front:hover,
+.skill-back:hover {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--glass), var(--glass)) padding-box,
+    linear-gradient(90deg, var(--primary), var(--deep)) border-box;
+  transform: translateY(-4px);
+}
+
+/* hint text */
+.hint {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   Section separators
+========================= */
+
+/* add separator to every section except first */
+.section + .section {
+  position: relative;
+  margin-top: 6rem;
+  padding-top: 6rem;
+}
+
+/* gradient divider line */
+.section + .section::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 65%;
+  height: 1px;
+  filter: blur(0.4px);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    var(--deep),
+    transparent
+  );
+
+  opacity: 0.35;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 6rem;
+  padding: 2.5rem 2rem;
+
+  text-align: center;
+
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-links a {
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: 0.25s;
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+  color: var(--primary);
+}
+
+/* =========================
+   Back to top button
+========================= */
+
+.back-to-top {
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+
+  color: var(--text);
+  font-size: 1rem;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition: 0.3s ease;
+
+  z-index: 200;
+}
+
+/* visible state */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* hover polish */
+.back-to-top:hover {
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(var(--glass), var(--glass)) padding-box,
+    linear-gradient(90deg, var(--primary), var(--deep)) border-box;
+
+  transform: translateY(-3px);
+}
+
