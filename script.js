@@ -6,7 +6,6 @@ AOS.init({
   offset: 80
 });
 
-
 // GSAP hero animation
 gsap.from(".hero-card", {
   y: 80,
@@ -14,7 +13,6 @@ gsap.from(".hero-card", {
   duration: 1.2,
   ease: "power3.out"
 });
-
 
 // Theme toggle
 const toggle = document.getElementById("themeToggle");
@@ -28,16 +26,13 @@ toggle.addEventListener("click", () => {
       : '<i class="fas fa-moon"></i>';
 });
 
-
 // Fake form submit (demo)
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
   alert("Message sent 🚀");
 });
 
-/* =========================
-   Active section highlight
-========================= */
+/*Active section highlight*/
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -65,9 +60,7 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => observer.observe(section));
 
-/* =========================
-   Skills flip logic
-========================= */
+/* Skills flip logic */
 
 const skillCards = document.querySelectorAll(".skill-flip");
 
@@ -84,9 +77,7 @@ skillCards.forEach((card) => {
   });
 });
 
-/* =========================
-   Navbar blur on scroll
-========================= */
+/* Navbar blur on scroll */
 
 const nav = document.querySelector(".nav");
 
@@ -98,9 +89,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* =========================
-   Back to top logic
-========================= */
+/* Back to top logic */
 
 const backToTopBtn = document.getElementById("backToTop");
 
@@ -118,4 +107,3 @@ backToTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
-
