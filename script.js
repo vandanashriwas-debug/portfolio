@@ -15,15 +15,19 @@ gsap.from(".hero-card", {
 });
 
 // Theme toggle
-const toggle = document.getElementById("themeToggle");
+const toggles = document.querySelectorAll("#themeToggle, #themeToggleMobile");
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+toggles.forEach(toggle => {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
 
-  toggle.innerHTML =
-    document.body.classList.contains("light")
-      ? '<i class="fas fa-sun"></i>'
-      : '<i class="fas fa-moon"></i>';
+    toggles.forEach(btn => {
+      btn.innerHTML =
+        document.body.classList.contains("light")
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
+    });
+  });
 });
 
 // Fake form submit (demo)
@@ -105,5 +109,24 @@ backToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
+  });
+});
+
+/* Hamburger menu toggle */
+
+const hamburger = document.getElementById("hamburger");
+const mobileNav = document.getElementById("navLinks");
+
+// toggle menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+mobileNav.classList.toggle("open");
+});
+
+// close menu when clicking a link (better UX)
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("open");
+hamburger.classList.remove("active");
   });
 });
