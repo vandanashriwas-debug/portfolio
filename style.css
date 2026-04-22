@@ -14,7 +14,6 @@ body.light {
   --glass: rgba(255, 255, 255, 0.6);
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -94,9 +93,22 @@ body {
 .icon-btn {
   background: transparent;
   border: none;
+  display: flex;
+  border-radius: 50%;
+  transition: 0.25s;
+
+  width: 36px;
+  height: 36px;
+
+  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
   color: var(--text);
+}
+.icon-btn i {
+  display: block;
+  line-height: 1;
 }
 
 .icon-btn.big {
@@ -211,11 +223,12 @@ body {
 .project-card {
   perspective: 1000px;
   transition: transform 0.35s cubic-bezier(.4, .2, .2, 1);
+  will-change: transform;
 }
 
 .project-inner {
   position: relative;
-  height: 180px;
+  height: 200px;
   transform-style: preserve-3d;
   transition: transform 0.9s cubic-bezier(.4, .2, .2, 1);
   will-change: transform;
@@ -227,7 +240,7 @@ body {
 
 /* lift whole card */
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.01);
 }
 
 .project-front,
@@ -316,7 +329,6 @@ button {
 
   display: block;
 
-  will-change: auto;
 }
 
 /* Gradient ring */
@@ -359,10 +371,16 @@ button {
 
 .nav-link {
   position: relative;
+  pointer-events: none;
   text-decoration: none;
   color: var(--text);
   padding-bottom: 4px;
   transition: 0.3s;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* underline animation */
@@ -374,7 +392,7 @@ button {
   width: 0%;
   height: 2px;
   background: linear-gradient(90deg, var(--primary), var(--deep));
-  transition: width 0.3s ease;
+  transition: all 0.35s cubic-bezier(.4,.2,.2,1);
 }
 
 /* active state */
@@ -600,4 +618,112 @@ button {
     linear-gradient(90deg, var(--primary), var(--deep)) border-box;
 
   transform: translateY(-3px);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* hamburger base */
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: 0.3s;
+}
+
+/* animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    z-index: 99;
+
+    width: 90%;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s ease;
+
+    backdrop-filter: blur(14px);
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+.mobile-actions {
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* desktop default */
+.desktop-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* hide mobile icons */
+.mobile-actions {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .desktop-actions {
+    display: none;
+  }
+
+  .mobile-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
