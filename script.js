@@ -46,13 +46,22 @@ form.addEventListener("submit", function(e) {
     this
   )
   .then(() => {
-    alert("Message sent successfully 🚀");
-    form.reset();
-  })
-  .catch((error) => {
-    alert("Failed to send message ❌");
-    console.error(error);
-  });
+
+  const status = document.querySelector(".form-status");
+
+  status.textContent = "Message sent successfully 🚀";
+  status.className = "form-status success";
+
+  form.reset();
+
+  setTimeout(() => {
+    status.className = "form-status";
+  }, 3000);
+})
+  const status = document.querySelector(".form-status");
+
+status.textContent = "Failed to send message ❌";
+status.className = "form-status error";
 });
 
 /*Active section highlight*/
