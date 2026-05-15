@@ -34,10 +34,11 @@ toggles.forEach(toggle => {
   });
 });
 
-// form submit 
+// form submit
 const form = document.getElementById("contactForm");
+ const status = document.querySelector(".form-status");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   emailjs.sendForm(
@@ -45,23 +46,24 @@ form.addEventListener("submit", function(e) {
     "template_7oejeh6",
     this
   )
+
   .then(() => {
+   
+    status.textContent = "Message sent successfully 🚀";
+    status.className = "form-status success";
 
-  const status = document.querySelector(".form-status");
+    form.reset();
+    setTimeout(() => {
+      status.className = "form-status";
+    }, 3000);
+  })
 
-  status.textContent = "Message sent successfully 🚀";
-  status.className = "form-status success";
-
-  form.reset();
-
-  setTimeout(() => {
-    status.className = "form-status";
-  }, 3000);
-})
-  const status = document.querySelector(".form-status");
-
-status.textContent = "Failed to send message ❌";
-status.className = "form-status error";
+  .catch((error) => {
+    const status = document.querySelector(".form-status");
+    status.textContent = "Failed to send message ❌";
+    status.className = "form-status error";
+    console.error(error);
+  });
 });
 
 /*Active section highlight*/
