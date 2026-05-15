@@ -1,3 +1,7 @@
+(function () {
+  emailjs.init("CoghxaSQA4MKVufEK");
+})();
+
 // AOS
 AOS.init({
   duration: 900,
@@ -30,10 +34,25 @@ toggles.forEach(toggle => {
   });
 });
 
-// Fake form submit (demo)
-document.getElementById("contactForm").addEventListener("submit", (e) => {
+// form submit 
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Message sent 🚀");
+
+  emailjs.sendForm(
+    "service_705fw5q",
+    "template_7oejeh6",
+    this
+  )
+  .then(() => {
+    alert("Message sent successfully 🚀");
+    form.reset();
+  })
+  .catch((error) => {
+    alert("Failed to send message ❌");
+    console.error(error);
+  });
 });
 
 /*Active section highlight*/
