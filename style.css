@@ -727,3 +727,29 @@ button {
     margin-top: 1rem;
   }
 }
+
+.form-status {
+  margin-top: 1rem;
+
+  font-size: 0.95rem;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition: 0.35s ease;
+}
+
+/* success */
+.form-status.success {
+  opacity: 1;
+  transform: translateY(0);
+  color: #7fffd4;
+}
+
+/* error */
+.form-status.error {
+  opacity: 1;
+  transform: translateY(0);
+  color: #ff7b7b;
+}
