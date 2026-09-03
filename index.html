@@ -26,40 +26,45 @@
       <a href="#hero" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#skills" class="nav-link">Skills</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
 
     <div class="mobile-actions">
-      <a href="https://github.com/vandanashriwas-debug" target="_blank" class="icon-btn">
+      <a href="https://github.com/vandanashriwas-debug" target="_blank" rel="noopener noreferrer" class="icon-btn"
+        aria-label="GitHub" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
 
-      <a href="resume.pdf" target="_blank" class="icon-btn" title="View Resume">
-          <i class="fas fa-file"></i>
-        </a>
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="View my resume"
+        title="View Resume">
+        <i class="fas fa-file"></i>
+      </a>
 
-      <button id="themeToggle" class="icon-btn">
+      <button id="themeToggleMobile" class="icon-btn" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
       </button>
     </div>
 
     <div class="nav-actions desktop-actions">
-      <a href="https://github.com/vandanashriwas-debug" target="_blank" class="icon-btn">
+      <a href="https://github.com/vandanashriwas-debug" target="_blank" rel="noopener noreferrer" class="icon-btn"
+        aria-label="GitHub" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
 
-      <a href="resume.pdf" target="_blank" class="icon-btn" title="View Resume">
-          <i class="fas fa-file"></i>
-        </a>
-      
-      <button id="themeToggle" class="icon-btn">
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="View my resume"
+        title="View Resume">
+        <i class="fas fa-file"></i>
+      </a>
+
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
       </button>
     </div>
 
     <!-- ONLY hamburger stays outside -->
-    <button class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Hamburger">
       <span></span>
       <span></span>
       <span></span>
@@ -80,14 +85,16 @@
       <!-- Right: Content -->
       <div class="hero-content">
         <h1 class="gradient-text">Hi, I'm Vandana Shriwas</h1>
-        <p class="hero-subtitle">Frontend Developer | React.js | JavaScript | HTML/CSS | Tailwind CSS | Exploring Full-Stack Development & AI | Actively Seeking Opportunities </p>
+        <p class="hero-subtitle">Frontend Developer | React.js | JavaScript | HTML/CSS | Tailwind CSS | Exploring
+          Full-Stack Development & AI | Actively Seeking Opportunities </p>
 
         <div class="hero-icons">
-          <a href="https://linkedin.com/in/vandana-shriwas" target="_blank" class="icon-btn big">
+          <a href="https://linkedin.com/in/vandana-shriwas" target="_blank" rel="noopener noreferrer"
+            class="icon-btn big" aria-label="Visit my LinkedIn profile">
             <i class="fab fa-linkedin"></i>
           </a>
 
-          <a href="mailto:vandanashriwas91@gmail.com" class="icon-btn big">
+          <a href="mailto:vandanashriwas91@gmail.com" class="icon-btn big" aria-label="Send me an email">
             <i class="fas fa-envelope"></i>
           </a>
         </div>
@@ -131,16 +138,14 @@
           <!-- Back -->
           <div class="skill-back glass">
             <div class="chips">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
+              <span class="chip">HTML/CSS</span>
               <span class="chip">Bootstrap</span>
               <span class="chip">JavaScript</span>
               <span class="chip">GSAP/AOS</span>
               <span class="chip">PHP</span>
               <span class="chip">React</span>
               <span class="chip">Tailwind CSS</span>
-              <span class="chip">MySQL</span>
-              <span class="chip">MongoDB</span>
+              <span class="chip">Database</span>
             </div>
           </div>
         </div>
@@ -158,8 +163,9 @@
             <div class="chips">
               <span class="chip">Quick Learner</span>
               <span class="chip">Leadership</span>
-              <span class="chip">Problem Solving</span>
               <span class="chip">Teamwork</span>
+              <span class="chip">Adaptibility</span>
+              <span class="chip">Problem Solving</span>
             </div>
           </div>
 
@@ -168,93 +174,245 @@
     </div>
   </section>
 
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+
+    <h2 class="section-title gradient-text">Certifications</h2>
+
+    <div class="certifications-grid">
+
+      <!-- Certificate 1 -->
+      <div class="certificate-card glass" data-aos="fade-up">
+
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+
+        <div class="certificate-content">
+
+          <h3>Full Stack Web Development with AI</h3>
+
+          <p class="certificate-issuer">
+            Internshala
+          </p>
+
+          <p class="certificate-description">
+            Completed comprehensive training in full-stack web development,
+            including frontend, backend, databases, React, and AI concepts.
+          </p>
+
+          <span class="certificate-year">2026</span>
+
+          <a href="certificates/Full Stack Web Development with AI Training - Certificate of Completion.pdf"
+            target="_blank" class="certificate-btn">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 2 -->
+      <div class="certificate-card glass" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="certificate-icon">
+          <i class="fas fa-award"></i>
+        </div>
+
+        <div class="certificate-content">
+
+          <h3>Basics of Python</h3>
+
+          <p class="certificate-issuer">
+            Infosys Springboard
+          </p>
+
+          <p class="certificate-description">
+            Built a foundational understanding of Python programming, including variables, data types, operators,
+            conditional statements, loops, functions, and basic problem-solving.
+          </p>
+
+          <span class="certificate-year">2024</span>
+
+          <a href="certificates/Python Certificate 1.pdf" target="_blank" class="certificate-btn">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 3 -->
+      <div class="certificate-card glass" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="certificate-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+
+        <div class="certificate-content">
+
+          <h3>Generative AI Foundations</h3>
+
+          <p class="certificate-issuer">
+            UpGrad in collaboration with Microsoft
+          </p>
+
+          <p class="certificate-description">
+            Gained foundational knowledge of Generative AI, including AI concepts, large language models, prompt
+            engineering, and practical applications of generative AI technologies.
+          </p>
+
+          <span class="certificate-year">2025</span>
+
+          <a href="certificates/Generative AI Foundations Certificate Program.pdf" target="_blank"
+            class="certificate-btn">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 4 -->
+      <div class="certificate-card glass" data-aos="fade-up" data-aos-delay="300">
+
+        <div class="certificate-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+
+        <div class="certificate-content">
+
+          <h3>Generative AI Mastermind</h3>
+
+          <p class="certificate-issuer">
+            Outskill
+          </p>
+
+          <p class="certificate-description">
+            Participated in an online workshop focused on Generative AI, gaining practical insights into AI tools,
+            prompt engineering, large language models, and real-world applications of generative AI.
+          </p>
+
+          <span class="certificate-year">2025</span>
+
+          <a href="certificates/Outskill certificate pdf.pdf" target="_blank" class="certificate-btn">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- PROJECTS -->
   <section id="projects" class="section">
-    <h2 class="section-title gradient-text">Projects</h2>
 
-    <div class="project-grid" data-aos="fade-up">
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title gradient-text">Projects</h2>
 
-      <div class="project-card" data-aos="zoom-in">
-        <div class="project-inner">
-          <div class="project-front glass">Animated Portfolio Website</div>
-          <div class="project-back glass">Modern responsive portfolio with glassmorphism UI, smooth animations, flip
-            cards, smooth GSAP-powered interactions and interactive UI.
-            <br>
-            <h4>HTML • CSS • JavaScript • GSAP • AOS</h4>
+      <div class="project-grid" data-aos="fade-up">
+
+        <div class="project-card" data-aos="zoom-in">
+          <div class="project-inner">
+            <div class="project-front glass">Animated Portfolio Website</div>
+            <div class="project-back glass">Modern responsive portfolio with glassmorphism UI, smooth animations, flip
+              cards, smooth GSAP-powered interactions and interactive UI.
+              <br>
+              <h4>HTML • CSS • JavaScript • GSAP • AOS</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="zoom-in">
+          <div class="project-inner">
+            <div class="project-front glass">StayNest – Student Accommodation Finder</div>
+            <div class="project-back glass">A full-stack property listing platform where students can browse, filter,
+              and
+              explore accommodation options, view property details, and manage their interest in listings.
+              <br>
+              <h4>HTML • CSS • JavaScript • PHP • MySQL</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="zoom-in">
+          <div class="project-inner">
+            <div class="project-front glass">Boutique Website</div>
+            <div class="project-back glass">On Going</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="project-card" data-aos="zoom-in">
-        <div class="project-inner">
-          <div class="project-front glass">StayNest – Student Accommodation Finder</div>
-          <div class="project-back glass">A full-stack property listing platform where students can browse, filter, and 
-            explore accommodation options, view property details, and manage their interest in listings.
-            <br>
-            <h4>HTML • CSS • JavaScript • PHP • MySQL</h4>
-          </div>
+    <!-- CONTACT (form only now) -->
+    <section id="contact" class="section">
+      <h2 class="section-title gradient-text">Contact</h2>
+
+      <div class="glass card contact-card" data-aos="fade-up">
+
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Send</button>
+          <p class="form-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+
+      <div class="footer-content">
+        <p class="footer-copy">
+          © 2026 Vandana Shriwas
+        </p>
+
+        <div class="footer-links">
+
+          <a href="https://github.com/vandanashriwas-debug" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://linkedin.com/in/vandana-shriwas" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:vandanashriwas91@gmail.com" aria-label="Email" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+
         </div>
       </div>
+    </footer>
 
-      <div class="project-card" data-aos="zoom-in">
-        <div class="project-inner">
-          <div class="project-front glass">Boutique Website</div>
-          <div class="project-back glass">On Going</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- CONTACT (form only now) -->
-  <section id="contact" class="section">
-    <h2 class="section-title gradient-text">Contact</h2>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <div class="glass card contact-card" data-aos="fade-up">
-
-      <form id="contactForm">
-        <input type="text" name="name"placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message"placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
-        <p class="form-status"></p>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-
-    <div class="footer-content">
-      <p class="footer-copy">
-        © 2026 Vandana Shriwas
-      </p>
-
-      <div class="footer-links">
-        <a href="https://github.com/vandanashriwas-debug" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/vandana-shriwas" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="mailto:vandanashriwas91@gmail.com">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-  <!-- AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
